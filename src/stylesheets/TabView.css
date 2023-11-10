@@ -1,0 +1,21 @@
+.tab-navigation {
+    display: flex;
+    /* background-color: #3f51b5; */
+    background-color: rgb(19, 163, 43);
+    color: #fff;
+    justify-content: space-around;
+    padding: 5px;
+    font-size: medium;
+  }
+  
+  .tab {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .tab.active {
+    /* background-color: #536dfe; */
+    background-color: rgb(18, 194, 47);
+  }
+  
