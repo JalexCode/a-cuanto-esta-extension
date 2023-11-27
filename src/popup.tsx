@@ -1,18 +1,10 @@
-import HeaderComponent from '~components/HeaderComponent';
 import CurrenciesPricesComponent from './components/CurrenciesPricesComponent';
-import './stylesheets/App.css'
+import './stylesheets/styles.css'
 
 function IndexPopup() {
   return (
     <div className="App">
-      <header>
-        <HeaderComponent/>
-      </header>
-      <body>
-        <div>
-          <CurrenciesPricesComponent/>
-        </div>
-      </body>
+      <CurrenciesPricesComponent/>  
     </div>
   );
 }

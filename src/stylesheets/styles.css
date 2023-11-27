@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+    @apply bg-slate-200;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu';
+}
+
+body {
+    height: max-content;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#__plasmo {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('data-base64:~assets/fonts/Ubuntu-Regular.ttf');
+}
+
+.navbar {
+    padding: var(--navbar-padding,.5rem);
+    min-height: max-content;
+    width: 100%;
+    /* align-items: center; */
+    display: flex;
+    @apply bg-blue-500;
+    
+}
+
+hr {
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #dddddd, rgba(255, 255, 255, 0));
+    border: none;
+  }
+
+.base-color {
+    @apply bg-blue-500;
+}
