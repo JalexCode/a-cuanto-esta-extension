@@ -42,7 +42,7 @@ function getCurrentTime() {
   return formatted;
 }
 
-const CurrenciesPricesComponent = () => {
+const CurrenciesPricesPage = () => {
   //
   const [error, setError] = useState<string>("");
   const [currencySalePrices, setCurrencySalePrices] = useState([]);
@@ -176,4 +176,4 @@ const CurrenciesPricesComponent = () => {
   );
 };
 
-export default CurrenciesPricesComponent;
+export default CurrenciesPricesPage;

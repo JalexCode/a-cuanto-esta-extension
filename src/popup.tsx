@@ -1,10 +1,10 @@
-import CurrenciesPricesComponent from './components/CurrenciesPricesComponent';
+import CurrenciesPricesPage from './components/CurrenciesPricesPage';
 import './stylesheets/styles.css'
 
 function IndexPopup() {
   return (
     <div className="App">
-      <CurrenciesPricesComponent/>  
+      <CurrenciesPricesPage/>  
     </div>
   );
 }
