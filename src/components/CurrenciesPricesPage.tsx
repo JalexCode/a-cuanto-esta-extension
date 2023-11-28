@@ -149,7 +149,8 @@ const CurrenciesPricesPage = ({handlePage}) => {
           <>
             <div className='transition duration-300 opacity-100'>
               <div className='justify-center w-full'>
-                <ComboBoxComponent 
+                <ComboBoxComponent
+                  labelText={"Mostrar cambio en"}
                   selectedOption={selectedOption} 
                   handleOptionChange={handleOptionChange} 
                   valuesMap={currencyMap} 
