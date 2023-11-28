@@ -1,6 +1,6 @@
 const ErrorComponent = ({errorMessage, refresh}) => {
     return (
-        <div className="bg-red-500 text-white p-4 m-3 rounded transition duration-300 opacity-100">
+        <div className="bg-red-500 dark:bg-red-400 text-white p-4 m-3 rounded transition duration-300 opacity-100">
             <div className="flex flex-row">
                 <div className="items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
@@ -16,7 +16,7 @@ const ErrorComponent = ({errorMessage, refresh}) => {
                                 <li>Your password must include at least one pro wrestling finishing move</li>
                             </ul> */}
                         </div>
-                        <div className="mt-2 hover:cursor-pointer hover:text-red-200 hover:underline w-fit" onClick={refresh}>Reintentar</div>
+                        <div className="mt-2 hover:cursor-pointer hover:text-red-200 hover:underline w-full justify-center" onClick={refresh}>Reintentar</div>
                 </div>
             </div>
         </div>
