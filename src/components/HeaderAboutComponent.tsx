@@ -1,10 +1,10 @@
 function HeaderAboutComponent({ handlePage }) {
     return (
-        <header className="navbar p-0 min-h-min max-h-min text-white ">
+        <header className="navbar p-0 min-h-min max-h-min">
             <div className="flex content-start">
                 <a className="normal-case text-lg font-bold text-secondary" target="_blank">ACERCA DE</a>
             </div>
-            <div className="flex m-auto mr-0 gap-3">
+            <div className="flex m-auto mr-0 gap-3 dynamic-fill-color">
                 <label title="Atrás" onClick={() => handlePage('main')} className="hover:cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                         <g clip-path="url(#clip0_9_2121)">
