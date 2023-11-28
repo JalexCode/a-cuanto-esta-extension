@@ -16,7 +16,7 @@ const ErrorComponent = ({errorMessage, refresh}) => {
                                 <li>Your password must include at least one pro wrestling finishing move</li>
                             </ul> */}
                         </div>
-                        <div className="mt-2 hover:cursor-pointer hover:text-red-400 underline" onClick={refresh}>Reintentar</div>
+                        <div className="mt-2 hover:cursor-pointer hover:text-red-200 hover:underline w-fit" onClick={refresh}>Reintentar</div>
                 </div>
             </div>
         </div>
