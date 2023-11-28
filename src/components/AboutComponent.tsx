@@ -1,1 +1,0 @@
-{/* <p className='tinny-text'>Developed by <a href='https://github.com/JalexCode' target='_blank' rel="noreferrer">JalexCode</a></p> */}
