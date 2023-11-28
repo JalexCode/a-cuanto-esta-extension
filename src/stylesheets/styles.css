@@ -5,7 +5,7 @@
 
 html,
 body {
-    @apply bg-slate-200;
+    @apply bg-slate-200 dark:bg-slate-800;
     margin: 0;
     padding: 0;
 }
@@ -43,13 +43,12 @@ body {
     width: 100%;
     /* align-items: center; */
     display: flex;
-    @apply bg-blue-500;
+    @apply bg-blue-500 dark:bg-slate-900 text-white dark:text-slate-400;
     
 }
 
 .dynamic-bg-button{
-    @apply rounded-md
-    @apply bg-white hover:bg-blue-300 transition-colors duration-500 ease-in-out
+    @apply bg-transparent hover:bg-blue-300 transition-colors duration-500 ease-in-out
 }
 
 hr {

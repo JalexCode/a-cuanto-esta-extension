@@ -1,9 +1,9 @@
 const CardComponent = ({ title, value, diff, currency }) => {
     const success = value !== undefined;
-    const diffClass = diff < 0 ? 'text-green-500' : diff > 0 ? 'text-red-500' : ''
+    const diffClass = diff < 0 ? 'text-green-500 dark:text-green-300' : diff > 0 ? 'text-red-500 dark:text-red-300' : ''
     return (
         <div className="p-2 mt-1 flex-row">
-            <div className="p-2 bg-blue-500 shadow-sm text-center rounded-xl -mt-6 ml-3 absolute">
+            <div className="p-2 bg-blue-500 dark:bg-slate-700 shadow-md dark:shadow-slate-900 text-center rounded-xl -mt-6 ml-3 absolute">
                 {title === "Compra" ?
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-6 h-6">
                         <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
@@ -15,7 +15,7 @@ const CardComponent = ({ title, value, diff, currency }) => {
                     </svg>
                 }
             </div>
-            <div className="flex-col rounded-lg shadow-lg dark:shadow-xl dark:shadow-black bg-white dark:bg-slate-600 items-end justify-end ">
+            <div className="flex-col rounded-lg shadow-lg text-black dark:text-gray-300 dark:shadow-xl dark:shadow-slate-900 bg-white dark:bg-slate-600 items-end justify-end ">
                 <div className="text-end pt-1 p-2 ml-9">
                     <p className="text-sm capitalize font-light">{title}</p>
                     <p className={`mb-0 ${success ? "font-bold text-base" : "font-semibold text-base"} ${diffClass}`}>{value?.toFixed(2) ?? "No disponible"} {success ? currency : ""}</p>
