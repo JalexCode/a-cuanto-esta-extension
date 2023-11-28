@@ -42,7 +42,7 @@ function getCurrentTime() {
   return formatted;
 }
 
-const CurrenciesPricesPage = () => {
+const CurrenciesPricesPage = ({handlePage}) => {
   //
   const [error, setError] = useState<string>("");
   const [currencySalePrices, setCurrencySalePrices] = useState([]);
@@ -132,7 +132,7 @@ const CurrenciesPricesPage = () => {
   //
   return (
     <div>
-      <HeaderComponent handleRefresh={getData}/>
+      <HeaderComponent handleRefresh={getData} handlePage={handlePage}/>
       <div className='justify-center w-full'>
         <DateRangeComponent 
           ranges={ranges} 
