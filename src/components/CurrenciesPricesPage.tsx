@@ -42,7 +42,7 @@ function getCurrentTime() {
   return formatted;
 }
 
-const CurrenciesPricesPage = ({handlePage}) => {
+const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setDarkMode}) => {
   //
   const [error, setError] = useState<string>("");
   const [currencySalePrices, setCurrencySalePrices] = useState([]);
@@ -53,7 +53,7 @@ const CurrenciesPricesPage = ({handlePage}) => {
   const [dateFrom, setDateFrom] = useState<string>(ranges[firstTab]);
   const [activeDateRangeTab, setDateRangeTab] = useState<string>(firstTab);
   // date range error tab & handle
-  const [dateRangeErrorTab, setDateRangeErrorTab] = useState<string>();
+  const [dateRangeErrorTab, setDateRangeErrorTab] = useState<string>("");
   const handleDateRangeTabClick = (tab: React.SetStateAction<string>) => {
       setDateRangeErrorTab("")
       setDateRangeTab(tab);
@@ -132,7 +132,7 @@ const CurrenciesPricesPage = ({handlePage}) => {
   //
   return (
     <div>
-      <HeaderComponent handleRefresh={getData} handlePage={handlePage}/>
+      <HeaderComponent handleRefresh={getData} handlePage={handlePage} darkMode={darkMode} setDarkMode={setDarkMode}/>
       <div className='justify-center w-full'>
         <DateRangeComponent 
           ranges={ranges} 
