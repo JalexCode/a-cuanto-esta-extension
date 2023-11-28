@@ -2,7 +2,7 @@ import React from 'react';
 
 function TabNavigation({ tabsMap, activeTab, handleTabClick, selectedOption }) {
   return (
-    <div className="bg-blue-500 dark:bg-transparent justify-around dark:justify-between text-white dark:text-slate-600 flex text-base">
+    <div className="bg-blue-500 dark:bg-transparent justify-around dark:justify-between dark:m-auto text-white dark:text-slate-600 flex text-base">
       {Object.entries(tabsMap).map(([tabId, tabText]) => (
         tabId !== selectedOption && tabId !== 'CUP' ? (
           <div
