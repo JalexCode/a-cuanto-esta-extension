@@ -1,7 +1,7 @@
 {
   "name": "a-cuanto-esta",
   "displayName": "¿A cuánto está?",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Current prices for purchase and sale of foreign currencies in Cuba",
   "author": "https://github.com/JalexCode",
   "scripts": {
