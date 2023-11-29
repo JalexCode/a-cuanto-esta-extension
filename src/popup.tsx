@@ -5,7 +5,7 @@ import './stylesheets/styles.css'
 
 function IndexPopup() {
   // dark mode
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
   // pages
   const [currentPage, setCurrentPage] = useState("main")
   const pages = {
@@ -13,6 +13,7 @@ function IndexPopup() {
     about: <AboutPage handlePage={setCurrentPage} />
   }
   useEffect(() => {
+    localStorage.setItem('darkMode', String(darkMode));
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
