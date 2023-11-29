@@ -13,7 +13,6 @@ const DateRangeComponent = ({ ranges, activeTab, handleTabClick, errorTab }) => 
                         onClick={() => handleTabClick(rangeId)}>
                     <Tooltip id={rangeId} />
                     {rangeId}
-                    {/* {range[0].format('DD/MM/YYYY')} - {range[1].format('DD/MM/YYYY')} */}
                 </a>
             ))}
         </div>
