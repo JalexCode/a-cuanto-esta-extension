@@ -11,10 +11,6 @@ const ErrorComponent = ({errorMessage, refresh}) => {
                     <h3 className="">Ha ocurrido un error</h3>
                         <div className="">
                             {errorMessage}
-                            {/* <ul role="list" className="yb abo ato">
-                                <li>Your password must be at least 8 characters</li>
-                                <li>Your password must include at least one pro wrestling finishing move</li>
-                            </ul> */}
                         </div>
                         <div className="mt-2 hover:cursor-pointer hover:text-red-200 hover:underline w-full justify-center" onClick={refresh}>Reintentar</div>
                 </div>
