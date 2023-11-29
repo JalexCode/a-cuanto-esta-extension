@@ -43,10 +43,14 @@ function getCurrentTime() {
 }
 
 const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: setDarkMode }) => {
-  //
+  // error state
   const [error, setError] = useState<string>("");
+  // requested data states
   const [currencySalePrices, setCurrencySalePrices] = useState([]);
   const [currencyPurchasePrices, setCurrencyPurchasePrices] = useState([]);
+  const [successFetchingSalePrices, setSuccessFetchingSalePrices] = useState(false);
+  const [successFetchingPurchasePrices, setSuccessFetchingPurchasePrices] = useState(false);
+  // bottom tab nav
   const [activeNavTab, setActiveNavTab] = useState(Object.keys(currencyMap)[0]);
   // date range tab navigation
   const firstTab = Object.keys(ranges)[0]
@@ -59,16 +63,12 @@ const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: set
     setDateRangeTab(tab);
     setDateFrom(ranges[`${tab}`]);
   };
-  //
+  // comboBox state
   const [selectedOption, setSelectedOption] = useState(Object.keys(currencyMap)[Object.keys(currencyMap).length - 1]);
-  //
   const handleOptionChange = (event: { target: { value: any; }; }) => {
     const newValue = event.target.value;
     setSelectedOption(newValue);
   };
-  //
-  const [successFetchingSalePrices, setSuccessFetchingSalePrices] = useState(false);
-  const [successFetchingPurchasePrices, setSuccessFetchingPurchasePrices] = useState(false);
   //
   const fetchData = async (offerType: string) => {
     // setup init
@@ -95,7 +95,6 @@ const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: set
     } catch (e) {
       console.error(`Error fetching currency [${offerType}] prices: `, e);
       setError(e.message)
-      console.log(e.message)
       setDateRangeErrorTab(activeDateRangeTab)
     }
   };
@@ -113,7 +112,6 @@ const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: set
   }
 
   const getData = () => {
-    console.log("GET DATA")
     fetchData("Venta");
     fetchData("Compra");
   }
@@ -128,7 +126,6 @@ const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: set
   //
   const exchangeSaleValue: Number = selectedOption === 'CUP' ? currencySalePrice : currencySalePrice / currencySalePrices?.[selectedOption]?.median;
   const exchangePurchaseValue: Number = selectedOption === 'CUP' ? currencyPurchasePrice : currencyPurchasePrice / currencyPurchasePrices?.[selectedOption]?.median;
-  console.log(exchangeSaleValue, exchangePurchaseValue)
   //
   return (
     <div>
