@@ -10,7 +10,7 @@ function IndexPopup() {
   const [currentPage, setCurrentPage] = useState("main")
   const pages = {
     main: <CurrenciesPricesPage handlePage={setCurrentPage} darkMode={darkMode} setDarkMode={setDarkMode}/>,
-    about: <AboutPage handlePage={setCurrentPage} />
+    about: <AboutPage handlePage={setCurrentPage} darkMode={darkMode}/>
   }
   useEffect(() => {
     localStorage.setItem('darkMode', String(darkMode));
