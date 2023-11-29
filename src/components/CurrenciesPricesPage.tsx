@@ -24,7 +24,7 @@ const ranges = {
   '24H': format(subDays(TODAY, 1), 'yyyy-MM-dd'),
   '1S': format(subWeeks(TODAY, 1), 'yyyy-MM-dd'),
   '1M': format(subMonths(TODAY, 1), 'yyyy-MM-dd'),
-  '1A': format(subYears(TODAY, 1), 'yyyy-MM-dd')       
+  '1A': format(subYears(TODAY, 1), 'yyyy-MM-dd')
 }
 
 function getFormmatedCurrentDate() {
@@ -38,11 +38,11 @@ function getCurrentTime() {
   const secs = String(now.getSeconds()).padStart(2, '0');
 
   const formatted = `${hour}:${mins}:${secs}`;
-  
+
   return formatted;
 }
 
-const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setDarkMode}) => {
+const CurrenciesPricesPage = ({ handlePage, darkMode: darkMode, setDarkMode: setDarkMode }) => {
   //
   const [error, setError] = useState<string>("");
   const [currencySalePrices, setCurrencySalePrices] = useState([]);
@@ -55,10 +55,10 @@ const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setD
   // date range error tab & handle
   const [dateRangeErrorTab, setDateRangeErrorTab] = useState<string>("");
   const handleDateRangeTabClick = (tab: React.SetStateAction<string>) => {
-      setDateRangeErrorTab("")
-      setDateRangeTab(tab);
-      setDateFrom(ranges[`${tab}`]);
-  };  
+    setDateRangeErrorTab("")
+    setDateRangeTab(tab);
+    setDateFrom(ranges[`${tab}`]);
+  };
   //
   const [selectedOption, setSelectedOption] = useState(Object.keys(currencyMap)[Object.keys(currencyMap).length - 1]);
   //
@@ -76,7 +76,7 @@ const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setD
     offerType === "Venta" ? setCurrencySalePrices([]) : setCurrencyPurchasePrices([]);
     offerType === "Venta" ? setSuccessFetchingSalePrices(false) : setSuccessFetchingPurchasePrices(false)
     //
-    try {        
+    try {
       const response = await axios.get(
         URL,
         {
@@ -84,7 +84,7 @@ const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setD
             token: TOKEN,
             date_from: `${dateFrom} 00:00:00`,
             date_to: `${getFormmatedCurrentDate()} ${getCurrentTime()}`,
-            offer: `${offerType}`            
+            offer: `${offerType}`
           },
         }
       );
@@ -132,44 +132,49 @@ const CurrenciesPricesPage = ({handlePage, darkMode: darkMode, setDarkMode: setD
   //
   return (
     <div>
-      <HeaderComponent handleRefresh={getData} handlePage={handlePage} darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <HeaderComponent
+        handleRefresh={getData}
+        handlePage={handlePage}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
       <div className='justify-center w-full'>
-        <DateRangeComponent 
-          ranges={ranges} 
-          activeTab={activeDateRangeTab} 
-          handleTabClick={handleDateRangeTabClick} 
+        <DateRangeComponent
+          ranges={ranges}
+          activeTab={activeDateRangeTab}
+          handleTabClick={handleDateRangeTabClick}
           errorTab={dateRangeErrorTab}
         />
       </div>
       {error ? (
         <ErrorComponent errorMessage={error} refresh={getData} />
       ) : (
-        !successFetchingSalePrices && !successFetchingPurchasePrices ? 
+        !successFetchingSalePrices && !successFetchingPurchasePrices ?
           <LoadingComponent /> :
           <>
             <div className='transition duration-300 opacity-100'>
               <div className='justify-center w-full'>
                 <ComboBoxComponent
                   labelText={"Mostrar cambio en"}
-                  selectedOption={selectedOption} 
-                  handleOptionChange={handleOptionChange} 
-                  valuesMap={currencyMap} 
-                  activeTab={activeNavTab} 
+                  selectedOption={selectedOption}
+                  handleOptionChange={handleOptionChange}
+                  valuesMap={currencyMap}
+                  activeTab={activeNavTab}
                 />
               </div>
-              {Number.isNaN(exchangeSaleValue) || Number.isNaN(exchangePurchaseValue) ? 
+              {Number.isNaN(exchangeSaleValue) || Number.isNaN(exchangePurchaseValue) ?
                 <ErrorComponent errorMessage="Datos no disponibes" refresh={getData} /> :
                 <div className='flex justify-between items-center gap-0 pt-4 pb-4'>
-                  <CardComponent title={"Venta"} value={exchangeSaleValue} diff={saleMedianDiff} currency={selectedOption}/>
-                  <CardComponent title={"Compra"} value={exchangePurchaseValue} diff={purchaseMedianDiff} currency={selectedOption}/>
+                  <CardComponent title={"Venta"} value={exchangeSaleValue} diff={saleMedianDiff} currency={selectedOption} />
+                  <CardComponent title={"Compra"} value={exchangePurchaseValue} diff={purchaseMedianDiff} currency={selectedOption} />
                 </div>
               }
             </div>
-            <TabNavigation 
-              tabsMap={currencyMap} 
-              activeTab={activeNavTab} 
-              handleTabClick={setActiveNavTab} 
-              selectedOption={selectedOption} 
+            <TabNavigation
+              tabsMap={currencyMap}
+              activeTab={activeNavTab}
+              handleTabClick={setActiveNavTab}
+              selectedOption={selectedOption}
             />
           </>
       )}
