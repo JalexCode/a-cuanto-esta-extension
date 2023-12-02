@@ -2,7 +2,7 @@ function HeaderAboutComponent({ handlePage }) {
     return (
         <header className="navbar p-0 min-h-min max-h-min">
             <div className="flex content-start">
-                <a className="normal-case text-lg font-bold text-secondary" target="_blank">ACERCA DE</a>
+                <a className="normal-case text-lg font-bold text-secondary dynamic-fill-color-2" target="_blank">ACERCA DE</a>
             </div>
             <div className="flex m-auto mr-0 gap-3 dynamic-fill-color">
                 <label title="Atrás" onClick={() => handlePage('main')} className="hover:cursor-pointer">
