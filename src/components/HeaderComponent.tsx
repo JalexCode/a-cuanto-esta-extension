@@ -2,7 +2,7 @@ function HeaderComponent({ handleRefresh, handlePage, darkMode, setDarkMode }) {
     return (
         <header className="navbar p-0 min-h-min max-h-min">
             <div className="flex content-start normal-case text-lg font-bold dynamic-fill-color">
-                ¿A CUÁNTO E<span className="text-blue-700">$</span>TÁ?
+                ¿A CUÁNTO E<span className="text-blue-300 dark:text-blue-500">$</span>TÁ?
             </div>
             <div className="flex m-auto mr-0 gap-3">
 
