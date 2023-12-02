@@ -13,12 +13,13 @@ const AboutPage = ({ handlePage, darkMode }) => {
             <HeaderAboutComponent handlePage={handlePage} />
             <div className="flex flex-col items-center p-6">
 
-                <img src={icon} alt="Logo" className="w-24 h-32" />
+                <img src={icon} alt="Logo" className="w-20" />
 
                 <p className="mt-2 text-lg font-bold text-black  dark:text-slate-600 dynamic-fill-color-2">¿A CUÁNTO ESTÁ?</p>
                 <p className='mt-2 text-xs text-slate-700 dark:text-slate-400'>Esta aplicación te mostrará el valor de cambio actual del Dólar, Euro y MLC en Cuba.</p>
                 <p className='mt-2 text-xs text-slate-700 dark:text-slate-400'>Fuente de datos: <a className="text-blue-500 dark:text_white" href='https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy' target='_blank' rel="noreferrer">eltoque.com</a></p>
                 <span className="text-xs text-slate-700 dark:text-slate-400">Iconos de redes sociales: <a target="_blank" href="https://icons8.com" className="text-blue-500">Icons8</a></span>
+                <a className="mt-2 text-blue-500 dark:text_white" href="https://www.buymeacoffee.com/javieralejandro" target="blank_">Cómprame un café☕</a>
                 <a id="clickable">
                     <Tooltip anchorSelect="#clickable" clickable>
                         <div className="flex flex-col">
